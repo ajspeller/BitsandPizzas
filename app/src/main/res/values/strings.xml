@@ -9,4 +9,9 @@
         <item>Diavolo</item>
         <item>Fungi</item>
     </string-array>
+
+    <string-array name="pasta">
+        <item>Spaghetti Bolognese</item>
+        <item>Lasagne</item>
+    </string-array>
 </resources>
