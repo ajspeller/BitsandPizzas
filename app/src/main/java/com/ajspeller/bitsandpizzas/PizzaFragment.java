@@ -1,6 +1,7 @@
 package com.ajspeller.bitsandpizzas;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -48,6 +49,14 @@ public class PizzaFragment extends Fragment {
         // create the layout for the Recycler View
         GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), 2);
         pizzaRecycler.setLayoutManager(layoutManager);
+
+        adapter.setListener(new CaptionedImagesAdapter.Listener() {
+            public void onClick(int position) {
+                Intent intent = new Intent(getActivity(), PizzaDetailActivity.class);
+                intent.putExtra(PizzaDetailActivity.EXTRA_PIZZA_ID, position);
+                getActivity().startActivity(intent);
+            }
+        });
 
         return pizzaRecycler;
     }
